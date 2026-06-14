@@ -12,7 +12,7 @@ const app =express()
 const port = process.env.port || 5000
 
 const allowedOrigins = [
-  "http://localhost:3000",
+  "http://localhost:8081",
   "https://intervuex-ai.vercel.app",
 ];
 
@@ -21,7 +21,7 @@ app.use(
         origin: allowedOrigins,
         credentials: true,
         methods: ["GET","PUT","POST","DELETE","OPTIONS"],
-        allowedHeaders: ["Content-Type", "Application/json"]
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 )
 app.use(express.json())
